@@ -1,0 +1,9 @@
+const projects = [
+  { badge: 'PERSONAL', title: 'Hospital Management System (HMS)', type: 'Multi-tenant Healthcare Platform', text: 'A centralized platform for managing healthcare operations across multiple hospitals.', points: ['Manage patients, appointments, prescriptions, and billing', 'Role-based access for Admin, Doctor, and Patient', 'AI-powered symptom analysis for preliminary clinical support', 'Centralized architecture to manage multiple hospitals efficiently'], tags: ['Python', 'React.js', 'MySQL', 'REST API'] },
+  { badge: 'PERSONAL', title: 'School Management System (SMS)', type: 'Web and Mobile School Operations Platform', text: 'A centralized platform for managing complete school operations across multiple branches.', points: ['Multi-branch architecture for centralized school management', 'Role-based modules for Admin, Teachers, Students, Parents, and Staff', 'Admissions, attendance, examinations, fees, transport, and communication workflows'], tags: ['PHP (Laravel)', 'Vue.js', 'MySQL', 'REST API'] },
+]
+
+function Projects() {
+  return <section id="projects" className="projects" aria-labelledby="projects-title"><div className="section-heading"><p className="section-tag">WHAT I HAVE BUILT</p><h2 id="projects-title">Featured <span>Projects</span></h2><p>A selection of products built with care and attention to detail.</p></div><div className="project-grid">{projects.map((project, index) => <article className="project-card" key={project.title}><div className="project-meta"><span className="project-icon">{index === 0 ? '01' : '02'}</span><small>{project.badge}</small></div><h3>{project.title}</h3><h4>{project.type}</h4><p className="project-text">{project.text}</p><ul>{project.points.map((point) => <li key={point}>{point}</li>)}</ul><div className="project-tags">{project.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></article>)}</div></section>
+}
+export default Projects
